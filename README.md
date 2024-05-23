@@ -59,3 +59,5 @@
    ```
 
    ```
+
+8. Start the script by double clicking the `keylogger.vbs` file in the AutoStart folder or restart your computer. The script will start automatically. You know that the script is running when you see the `taskLog.log` file in the AutoStart folder and a `script.lock` file.
