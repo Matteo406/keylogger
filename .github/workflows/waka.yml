@@ -1,0 +1,27 @@
+name: Waka Readme
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 12am UTC
+    - cron: "0 0 * * *"
+
+jobs:
+  update-activity-stats:
+    name: Update Activity Stats
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Replace activity stats in README
+        run: |
+          sed -i '/<!--START_SECTION:activity-->/,/<!--END_SECTION:activity-->/d' README.md
+          echo '<!--START_SECTION:activity-->' >> README.md
+          cat log_file.txt >> README.md
+          echo '<!--END_SECTION:activity-->' >> README.md
+      - name: Commit and push if changed
+        run: |
+          git diff
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git commit -am "Update activity stats in README.md" || echo "No changes to commit"
+          git push

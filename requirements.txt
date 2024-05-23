@@ -1,0 +1,6 @@
+pynput
+python-dotenv
+logging
+GitPython
+os-win
+schedule
