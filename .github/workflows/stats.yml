@@ -1,4 +1,4 @@
-name: Waka Readme
+name: Update README
 
 on:
   workflow_dispatch:
@@ -7,17 +7,16 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  update-activity-stats:
-    name: Update Activity Stats
+  update-readme:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Replace activity stats in README
-        run: |
-          sed -i '/<!--START_SECTION:activity-->/,/<!--END_SECTION:activity-->/d' README.md
-          echo '<!--START_SECTION:activity-->' >> README.md
-          cat log_file.txt >> README.md
-          echo '<!--END_SECTION:activity-->' >> README.md
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Update README
+        run: python updateREADME.py
       - name: Commit and push if changed
         run: |
           git diff

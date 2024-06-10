@@ -1,6 +1,5 @@
 pynput
 python-dotenv
-logging
-GitPython
-os-win
 schedule
+memory-profiler
+GitPython
