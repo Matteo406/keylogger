@@ -1,5 +1,25 @@
 <h1>Keylogger</h1>
 
+This is a simple keylogger that analyses how many shortcuts and key combinations you do.
+
+**Example **
+
+```txt
+keyboard events:
+AmountOfPress        257        ████████████████████ 100.00 %
+AmountOfCopy         2          ░░░░░░░░░░░░░░░░░░░░ 0.78 %
+AmountOfPaste        3          ░░░░░░░░░░░░░░░░░░░░ 1.17 %
+AmountOfSave         7          ░░░░░░░░░░░░░░░░░░░░ 2.72 %
+AmountOfCut          1          ░░░░░░░░░░░░░░░░░░░░ 0.39 %
+AmountOfUndo         1          ░░░░░░░░░░░░░░░░░░░░ 0.39 %
+AmountOfRedo         0          ░░░░░░░░░░░░░░░░░░░░ 0.00 %
+AmountOfSelectAll    1          ░░░░░░░░░░░░░░░░░░░░ 0.39 %
+AmountOfFind         2          ░░░░░░░░░░░░░░░░░░░░ 0.78 %
+AmountOfReplace      0          ░░░░░░░░░░░░░░░░░░░░ 0.00 %
+AmountOfPrint        0          ░░░░░░░░░░░░░░░░░░░░ 0.00 %
+
+```
+
 <h2>Setup</h2>
 
 1. Clone the repository
@@ -20,14 +40,11 @@
    ```
 4. Create the `.env` file
 
-   1. Add the path to the log file
-      ```env
-      PATH_TO_LOGFILE=/path/to/log/file
-      ```
-   2. Add the path to your Repository
-      ```env
-      PATH_TO_REPO=/path/to/repo
-      ```
+   1. Add the path to your Repository
+
+   ```env
+   PATH_TO_REPO=/path/to/repo
+   ```
 
 5. Run the `createVBS.py` script in order to create the VBS file
 
